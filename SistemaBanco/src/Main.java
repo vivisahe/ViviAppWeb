@@ -11,5 +11,26 @@ public class Main {
             System.out.println("BANCO");
             System.out.println("Opciones a realizar \n1.Depositar \n2.Retirar \n3.Consultar \nOpcion:");
             opcion = scanner.nextInt();
+            switch (opcion) {
+                case 1:
+                    System.out.println("Cantidad a depositar:");
+                    double monto_deposito = scanner.nextDouble();
+                    new Depositar().deposito(banco, monto_deposito);
+                    break;
+                case 2:
+                    System.out.println("Cantidad a retirar:");
+                    double monto_retirado = scanner.nextDouble();
+                    new  Retirar().retirar(banco, monto_retirado);
+                    break;
+                case 3:
+                    System.out.println("Consultar saldo");
+                    new Consultar().consultarsaldo(banco);
+                    break;
+                case 4:
+                    System.out.println("Saliendo....");
+                default:
+                    System.out.println("Opcion no disponible");
+            }
+        }while (opcion!=4);
     }
 }
